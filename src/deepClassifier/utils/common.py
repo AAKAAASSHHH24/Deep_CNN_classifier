@@ -9,8 +9,8 @@ from box import ConfigBox
 from pathlib import Path
 from typing import Any
 
-@ensure_annotations
-def read_yaml(path_to_yaml: Path) -> ConfigBox:
+@ensure_annotations                      # IT MAKES SURE THAT CORRECT FORM OF VALUE IS PASSED AS ARGUMENTS to ensure certain type of returns
+def read_yaml(path_to_yaml: Path) -> ConfigBox:   #access values in dictionary like attributes
     """reads yaml file and returns
 
     Args:
