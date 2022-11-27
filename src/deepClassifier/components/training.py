@@ -20,25 +20,25 @@ class Training:
             validation_split=0.20
         )
 
-        dataflow_kwargs = dict(
-            target_size=self.config.params_image_size[:-1],
+        dataflow_kwargs = dict(                               #define keyworg args for later use
+            target_size=self.config.params_image_size[:-1],   #taking only rows and columns excluding channels
             batch_size=self.config.params_batch_size,
-            interpolation="bilinear"
+            interpolation="bilinear"                          #increasing the pixel values inside an image
         )
 
         valid_datagenerator = tf.keras.preprocessing.image.ImageDataGenerator(
-            **datagenerator_kwargs
+            **datagenerator_kwargs                            #using keyword arguments we defined earlier
         )
 
-        self.valid_generator = valid_datagenerator.flow_from_directory(
+        self.valid_generator = valid_datagenerator.flow_from_directory(             #takes the path to a directory & generates batches of augmented data.
             directory=self.config.training_data,
             subset="validation",
             shuffle=False,
-            **dataflow_kwargs
+            **dataflow_kwargs                                #using keyword arguments we defined earlier
         )
 
         if self.config.params_is_augmentation:
-            train_datagenerator = tf.keras.preprocessing.image.ImageDataGenerator(
+            train_datagenerator = tf.keras.preprocessing.image.ImageDataGenerator(             #Generate batches of tensor image data with real-time data augmentation.
                 rotation_range=40,
                 horizontal_flip=True,
                 width_shift_range=0.2,

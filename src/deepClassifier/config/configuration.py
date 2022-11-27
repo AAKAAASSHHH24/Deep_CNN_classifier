@@ -4,7 +4,7 @@ from deepClassifier.entity import (DataIngestionConfig,
 PrepareBaseModelConfig,
 PrepareCallbacksConfig, TrainingConfig,EvaluationConfig
 )
-from pathlib import Path
+from pathlib import Path  #Path type helps in creating OS independent projects
 import os
 
 

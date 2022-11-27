@@ -142,3 +142,4 @@ artifacts/prepare_callbacks/tensorboard_log_dir/tb_logs_at_2022-09-26-23-05-56/t
 artifacts/prepare_callbacks/tensorboard_log_dir/tb_logs_at_2022-09-26-23-15-25/train/events.out.tfevents.1664214346.DESKTOP-R4543RH.13848.0.v2
 artifacts/training/model.h5
 artifacts/prepare_callbacks/tensorboard_log_dir/tb_logs_at_2022-09-27-00-01-19/train/events.out.tfevents.1664217097.DESKTOP-R4543RH.4500.0.v2
+artifacts/prepare_callbacks/tensorboard_log_dir/tb_logs_at_2022-11-27-05-16-16/train/events.out.tfevents.1669506423.DESKTOP-R4543RH.20460.0.v2
