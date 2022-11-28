@@ -3,7 +3,7 @@ from PIL import Image
 import tensorflow as tf
 import numpy as np
 """
-# Deep Classifier Project
+# AKASH'S CAT-DOG PROJECT
 
 """
 model = tf.keras.models.load_model("model.h5")
