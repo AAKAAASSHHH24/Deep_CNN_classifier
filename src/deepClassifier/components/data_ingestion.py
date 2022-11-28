@@ -6,6 +6,8 @@ from deepClassifier import logger
 from deepClassifier.utils import get_size
 from tqdm import tqdm
 from pathlib import Path
+import random
+import splitfolders
 
 
 class DataIngestion:
@@ -26,11 +28,13 @@ class DataIngestion:
             )
 
     def _get_updated_list_of_files(self, list_of_files):
-        return [
+        l= [
             f
             for f in list_of_files
             if f.endswith(".jpg") and ("Cat" in f or "Dog" in f)
         ]
+        
+        return random.sample(l, k=1000)   #Note: Here I am manipulating the training data due to hardware contraints.This will lead to data leakage
 
     def _preprocess(self, zf: ZipFile, f: str, working_dir: str):
         target_filepath = os.path.join(working_dir, f)
@@ -53,8 +57,5 @@ class DataIngestion:
                 
     
     def create_test_data(self):
-        
-        """
-        separte 30% of data into test data
-        """
+        splitfolders.ratio('PetImages', output="output", seed=1337, ratio=(.8, 0.1,0.1)) 
         pass

@@ -23,3 +23,16 @@ dvc.yaml is used for orchestration i.e. to connect several pipelines. It can act
 params.yaml keeps all the parameters related to the project like batch size, epochs etc.
 
 config.yaml keeps the project structure
+
+
+STEP 1: Set the env variable | Get it from dagshub -> remote tab -> mlflow tab
+MLFLOW_TRACKING_URI=https://dagshub.com/AAKAAASSHHH24/Deep_CNN_classifier.mlflow \
+MLFLOW_TRACKING_USERNAME=AAKAAASSHHH24 \
+MLFLOW_TRACKING_PASSWORD=eace9117203f613afad0874c7cf8db27d285d1b3 \
+python script.py
+
+STEP 2: install mlflow
+
+STEP 3: Set remote URI
+
+STEP 4: Use context manager of mlflow to start run and then log metrics, params and model
